@@ -516,27 +516,6 @@ button { font-family: inherit; }
 .feature-tile h5 { margin-bottom: 6px; }
 .feature-tile p { margin: 0; font-size: 0.92rem; color: var(--text-muted); }
 
-.platform-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 30px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.platform-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
-.platform-card__head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; }
-.platform-card__icon {
-  width: 54px; height: 54px; border-radius: 14px;
-  background: var(--red); color: var(--white);
-  display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem;
-  box-shadow: 0 8px 20px var(--red-glow);
-}
-.platform-card h4 { margin-bottom: 4px; }
-.platform-card__sub { display: block; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--red); margin-bottom: 14px; }
-.platform-card p { color: var(--text-muted); font-size: 0.95rem; }
-.platform-card__aud { font-size: 0.9rem; padding: 12px 14px; background: var(--grey-100); border-radius: var(--radius-sm); margin-bottom: 16px; }
-.platform-card__aud span { font-weight: 600; color: var(--grey-900); margin-right: 6px; }
-
 .check-list li { display: flex; gap: 10px; align-items: flex-start; padding: 6px 0; font-size: 0.95rem; }
 .check-list i { color: var(--red); font-size: 1.05rem; line-height: 1.5; }
 .check-list--light li { color: rgba(255, 255, 255, 0.9); font-size: 1rem; }
@@ -1857,6 +1836,87 @@ button { font-family: inherit; }
 @media (max-width: 575.98px) { .pcards, .frost-grid { grid-template-columns: 1fr; } .pcard { aspect-ratio: 4 / 3.6; } .notch-sec__header { margin-bottom: 36px; } }
 
 /* ==========================================================================
+   Home: JuriNex introduction, the closing section before contact
+   ========================================================================== */
+.jx-home {
+  position: relative; overflow: hidden; padding: 108px 0 96px;
+  color: rgba(255, 255, 255, 0.82);
+  background:
+    radial-gradient(70% 80% at 100% 0%, rgba(190, 28, 41, 0.38) 0%, transparent 58%),
+    radial-gradient(50% 60% at 0% 100%, rgba(190, 28, 41, 0.18) 0%, transparent 60%),
+    linear-gradient(165deg, #2a1719 0%, #1f2326 42%, #14171a 100%);
+}
+.jx-home__glow {
+  position: absolute; pointer-events: none;
+  width: 520px; height: 520px; right: -120px; top: -180px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(190, 28, 41, 0.45), transparent 68%);
+  filter: blur(8px);
+}
+.jx-home__grid {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(70% 80% at 80% 0%, #000 0%, transparent 72%);
+  mask-image: radial-gradient(70% 80% at 80% 0%, #000 0%, transparent 72%);
+}
+.jx-home .container { position: relative; z-index: 1; }
+.jx-home__intro { max-width: 760px; margin-bottom: 48px; }
+.jx-home__eyebrow {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+  color: #ffb3b9; margin-bottom: 16px;
+}
+.jx-home__eyebrow::before { content: ""; width: 36px; height: 2px; background: var(--red); border-radius: 2px; }
+.jx-home__title {
+  margin: 0 0 18px; font-family: "Plus Jakarta Sans", var(--font-head);
+  font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 800; letter-spacing: -0.04em; line-height: 0.98; color: var(--white);
+}
+.jx-home__title em { font-style: normal; color: #ff8d96; }
+.jx-home__lead { margin: 0 0 28px; max-width: 68ch; font-size: 1.12rem; line-height: 1.75; color: rgba(255, 255, 255, 0.82); }
+.jx-home__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 22px; }
+.jx-home__more {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-weight: 600; color: var(--white); text-decoration: none;
+}
+.jx-home__more:hover { color: #ffb3b9; }
+.jx-home__more .bi { transition: transform 0.2s ease; }
+.jx-home__more:hover .bi { transform: translateX(3px); }
+.jx-home__points {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px;
+}
+.jx-home__points li {
+  padding: 26px 24px 28px; border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+.jx-home__points li:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 141, 150, 0.45);
+}
+.jx-home__icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 46px; height: 46px; margin-bottom: 18px; border-radius: 14px;
+  background: var(--red); color: var(--white); font-size: 1.2rem;
+  box-shadow: 0 8px 20px var(--red-glow);
+}
+.jx-home__points h3 {
+  margin: 0 0 8px; font-family: "Plus Jakarta Sans", var(--font-head);
+  font-size: 1.12rem; font-weight: 700; line-height: 1.3; color: var(--white);
+}
+.jx-home__points p { margin: 0; font-size: 0.95rem; line-height: 1.6; color: rgba(255, 255, 255, 0.74); }
+.jx-home + .gtouch { margin-top: 0; }
+@media (max-width: 991.98px) {
+  .jx-home { padding: 80px 0 72px; }
+  .jx-home__points { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
    Intro (Quick introduction), Company vision, Core strengths timeline
    ========================================================================== */
 /* Open editorial About: header, media+copy stage, hairline highlight strip.
@@ -2553,10 +2613,6 @@ button { font-family: inherit; }
   background: var(--white); border: 1px solid var(--grey-200); font-size: 0.8rem; font-weight: 500; color: var(--grey-800);
 }
 .abt-cred__tags .bi { color: var(--red); font-size: 0.85rem; }
-.abt-cred__proof { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 32px; margin: 36px 0 0; padding: 28px 0 0; border-top: 1px solid rgba(31, 35, 38, 0.12); }
-.abt-cred__proof div { display: grid; gap: 4px; padding-left: 18px; border-left: 2px solid var(--red); }
-.abt-cred__proof dt { font-family: "Plus Jakarta Sans", var(--font-head); font-size: 1.9rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: var(--grey-950); }
-.abt-cred__proof dd { margin: 0; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--grey-600); }
 .abt-cred + .abt-why { padding-top: 56px; }
 
 /* Differentiators: white cards on the light band */
@@ -2582,7 +2638,6 @@ button { font-family: inherit; }
   .abt-build__intro { position: static; }
   .abt-cred__pillars { grid-template-columns: 1fr; }
   .abt-cred__pillar + .abt-cred__pillar { border-left: 0; border-top: 1px solid var(--grey-200); }
-  .abt-cred__proof { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 24px; }
 }
 @media (max-width: 767.98px) {
   .wave, .wave svg { height: 48px; }

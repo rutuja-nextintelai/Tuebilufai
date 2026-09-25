@@ -4,6 +4,7 @@ import IntroSection from '../components/IntroSection.jsx'
 import ApproachSection from '../components/ApproachSection.jsx'
 import VisionSection from '../components/VisionSection.jsx'
 import GetInTouch from '../components/GetInTouch.jsx'
+import JurinexHome from '../components/JurinexHome.jsx'
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
       <IntroSection showLink />
       <ApproachSection />
       <VisionSection />
+      <JurinexHome />
       <GetInTouch />
     </>
   )

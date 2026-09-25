@@ -30,7 +30,7 @@ const OFFICES = [
 ]
 
 const HOURS = [
-  { days: 'Monday – Saturday', time: '9:30 AM – 6:30 PM' },
+  { days: 'Monday – Saturday', time: '9:00 AM – 6:00 PM' },
   { days: 'Sunday', time: 'Closed', closed: true },
 ]
 

@@ -20,16 +20,8 @@ const CARDS = [
   },
 ]
 
-const PROOF = [
-  ['100%', 'Data stored in India'],
-  ['3', 'Indian languages supported'],
-  ['24/7', 'Monitored cloud infrastructure'],
-  ['4+', 'Sector platforms in the pipeline'],
-]
-
-// Three numbered pillars on a textured light band, divided by hairlines, with
-// a compact proof strip underneath. No imagery: the section reads as a
-// specification rather than a brochure.
+// Three numbered pillars on a textured light band, divided by hairlines.
+// No imagery: the section reads as a specification rather than a brochure.
 export default function CredibilitySection() {
   return (
     <section className="abt-cred" id="credibility">
@@ -67,12 +59,6 @@ export default function CredibilitySection() {
             </article>
           ))}
         </div>
-
-        <dl className="abt-cred__proof" data-aos="fade-up" data-aos-delay="200">
-          {PROOF.map(([v, l]) => (
-            <div key={l}><dt>{v}</dt><dd>{l}</dd></div>
-          ))}
-        </dl>
       </div>
     </section>
   )

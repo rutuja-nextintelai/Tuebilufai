@@ -1,58 +1,10 @@
-import { useEffect, useRef, useState } from 'react'
-
 const BRAND = 'Tuebiluf AI'
 
 const STATS = [
-  { target: '4+', label: 'Sector-specific AI platforms' },
-  { target: '3', label: 'Indian languages supported' },
+  { target: '15+', label: 'Indian languages supported' },
   { target: '100%', label: 'Data residency on GCP India' },
+  { target: '24/7', label: 'Monitored cloud infrastructure' },
 ]
-
-// Counts from 0 up to the number inside `target` once the stat scrolls into
-// view, keeping any prefix/suffix characters (+, %, K) fixed around it.
-function StatCounter({ target, label }) {
-  const ref = useRef(null)
-  const [seen, setSeen] = useState(false)
-  const [shown, setShown] = useState(target)
-
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const io = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) setSeen(true)
-    }, { threshold: 0.5 })
-    io.observe(el)
-    return () => io.disconnect()
-  }, [])
-
-  useEffect(() => {
-    if (!seen) return
-    const num = parseFloat(target.replace(/[^0-9.]/g, ''))
-    if (Number.isNaN(num)) return
-    const suffix = target.replace(/[0-9.]/g, '')
-    let raf = 0
-    let t0 = null
-    const tick = (now) => {
-      if (t0 === null) t0 = now
-      const p = Math.min((now - t0) / 1600, 1)
-      const eased = 1 - Math.pow(1 - p, 3)
-      if (p >= 1) setShown(target)
-      else {
-        setShown(Math.floor(eased * num) + suffix)
-        raf = requestAnimationFrame(tick)
-      }
-    }
-    raf = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(raf)
-  }, [seen, target])
-
-  return (
-    <div className="abt-stat" ref={ref}>
-      <strong>{shown}</strong>
-      <span>{label}</span>
-    </div>
-  )
-}
 
 export default function MissionSection() {
   return (
@@ -79,7 +31,12 @@ export default function MissionSection() {
 
           <div className="abt-mission__aside" data-aos="fade-left" data-aos-delay="120">
             <div className="abt-stats">
-              {STATS.map((s) => <StatCounter key={s.label} {...s} />)}
+              {STATS.map((s) => (
+                <div className="abt-stat" key={s.label}>
+                  <strong>{s.target}</strong>
+                  <span>{s.label}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>

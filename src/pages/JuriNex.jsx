@@ -124,12 +124,6 @@ const PRACTICES = [
   { num: 'III', name: 'Large law firms & enterprises', seats: '11 and above seats' },
 ]
 
-const PLATFORMS = [
-  { icon: 'bi-building', name: 'BizNex', subtitle: 'Business & Compliance AI Platform', text: 'Automates GST filings, compliance checks, and financial summaries.', audience: 'SMEs, Corporates, Business Consultants', features: ['Auto-check missing compliance clauses', 'Intelligent invoice OCR processing', 'Automated contract auditing'] },
-  { icon: 'bi-bank2', name: 'FinNex', subtitle: 'Financial & Banking AI Platform', text: 'Loan file digitization, credit risk analysis, and automated contract compliance.', audience: 'Banks, NBFCs, Fintech Organization', features: ['AI-driven creditworthiness scoring', 'Fraud detection', 'Automated regulatory reports'] },
-  { icon: 'bi-mortarboard', name: 'EduNex', subtitle: 'Education AI Platform', text: 'Automates exam paper evaluation, plagiarism detection, and academic content summarization.', audience: 'Universities, Schools, EdTech Organization', features: ['AI-generated lesson briefs', 'Multilingual transcripts', 'Research summarization'] },
-]
-
 export default function JuriNex() {
   const [modalOpen, setModalOpen] = useState(false)
   const [feature, setFeature] = useState(0)
@@ -529,40 +523,6 @@ export default function JuriNex() {
           primary={{ label: 'Schedule a demo', onClick: openModal }}
           secondary={{ to: JURINEX_URL, label: 'Visit jurinex.ai', external: true }}
         />
-      </section>
-
-      <section className="section" id="platforms">
-        <div className="container">
-          <div className="intro__head" data-aos="fade-up">
-            <div className="intro__head-copy">
-              <span className="intro__eyebrow">Our platforms</span>
-              <h2 className="intro__title">
-                Coming soon: <em>AI solutions</em>
-              </h2>
-            </div>
-          </div>
-          <div className="row g-4">
-            {PLATFORMS.map((p, i) => (
-              <div className="col-md-6 col-lg-4" key={p.name} data-aos="fade-up" data-aos-delay={i * 80}>
-                <div className="platform-card h-100">
-                  <div className="platform-card__head">
-                    <span className="platform-card__icon"><i className={`bi ${p.icon}`} /></span>
-                    <span className="tag tag--grey">Coming soon</span>
-                  </div>
-                  <h4>{p.name}</h4>
-                  <span className="platform-card__sub">{p.subtitle}</span>
-                  <p>{p.text}</p>
-                  <div className="platform-card__aud">
-                    <span>Demographic</span> {p.audience}
-                  </div>
-                  <ul className="check-list">
-                    {p.features.map((f) => <li key={f}><i className="bi bi-check-lg" /> {f}</li>)}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </section>
 
       <GetInTouch />
