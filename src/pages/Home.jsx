@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 import VideoBackdrop from '../components/VideoBackdrop.jsx'
 import IntroSection from '../components/IntroSection.jsx'
 import ApproachSection from '../components/ApproachSection.jsx'
-import VisionSection from '../components/VisionSection.jsx'
 import GetInTouch from '../components/GetInTouch.jsx'
 import JurinexHome from '../components/JurinexHome.jsx'
 
@@ -29,10 +28,9 @@ export default function Home() {
         </div>
       </section>
 
+      <JurinexHome />
       <IntroSection showLink />
       <ApproachSection />
-      <VisionSection />
-      <JurinexHome />
       <GetInTouch />
     </>
   )

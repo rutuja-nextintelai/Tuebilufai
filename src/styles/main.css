@@ -1593,7 +1593,7 @@ button { font-family: inherit; }
 .hero--video {
   position: relative; overflow: hidden;
   min-height: 0; padding: 0;
-  background: transparent; color: #0a0a0a;
+  background: #fbf7f7; color: #0a0a0a; /* shows through the notch, matches the section below */
 }
 .hero--video::before { display: none; }
 .hero-video {
@@ -1836,84 +1836,135 @@ button { font-family: inherit; }
 @media (max-width: 575.98px) { .pcards, .frost-grid { grid-template-columns: 1fr; } .pcard { aspect-ratio: 4 / 3.6; } .notch-sec__header { margin-bottom: 36px; } }
 
 /* ==========================================================================
-   Home: JuriNex introduction, the closing section before contact
+   Home: Meet JuriNex, the flagship platform section right after the hero (light)
    ========================================================================== */
 .jx-home {
-  position: relative; overflow: hidden; padding: 108px 0 96px;
-  color: rgba(255, 255, 255, 0.82);
-  background:
-    radial-gradient(70% 80% at 100% 0%, rgba(190, 28, 41, 0.38) 0%, transparent 58%),
-    radial-gradient(50% 60% at 0% 100%, rgba(190, 28, 41, 0.18) 0%, transparent 60%),
-    linear-gradient(165deg, #2a1719 0%, #1f2326 42%, #14171a 100%);
+  position: relative; overflow: hidden; padding: 104px 0 88px;
+  color: var(--text);
+  background: linear-gradient(180deg, #fbf7f7 0%, #fbf7f7 45%, #f7f8f9 100%);
 }
-.jx-home__glow {
+.jx-home__tint {
   position: absolute; pointer-events: none;
-  width: 520px; height: 520px; right: -120px; top: -180px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(190, 28, 41, 0.45), transparent 68%);
-  filter: blur(8px);
+  width: 720px; height: 720px; right: -240px; top: -260px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(190, 28, 41, 0.14), transparent 66%);
 }
-.jx-home__grid {
+.jx-home__dots {
   position: absolute; inset: 0; pointer-events: none;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 56px 56px;
-  -webkit-mask-image: radial-gradient(70% 80% at 80% 0%, #000 0%, transparent 72%);
-  mask-image: radial-gradient(70% 80% at 80% 0%, #000 0%, transparent 72%);
+  background-image: radial-gradient(rgba(31, 35, 38, 0.12) 1px, transparent 1px);
+  background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(60% 70% at 85% 10%, #000 0%, transparent 70%);
+  mask-image: radial-gradient(60% 70% at 85% 10%, #000 0%, transparent 70%);
 }
 .jx-home .container { position: relative; z-index: 1; }
-.jx-home__intro { max-width: 760px; margin-bottom: 48px; }
+.jx-home__layout {
+  display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 48px; align-items: center;
+}
+.jx-home__intro { max-width: 600px; }
 .jx-home__eyebrow {
   display: inline-flex; align-items: center; gap: 12px;
   font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
-  color: #ffb3b9; margin-bottom: 16px;
+  color: var(--red); margin-bottom: 18px;
 }
 .jx-home__eyebrow::before { content: ""; width: 36px; height: 2px; background: var(--red); border-radius: 2px; }
 .jx-home__title {
-  margin: 0 0 18px; font-family: "Plus Jakarta Sans", var(--font-head);
-  font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 800; letter-spacing: -0.04em; line-height: 0.98; color: var(--white);
+  margin: 0 0 12px; font-family: "Plus Jakarta Sans", var(--font-head);
+  font-size: clamp(2.6rem, 5.2vw, 4.2rem); font-weight: 800; letter-spacing: -0.04em; line-height: 0.98; color: var(--grey-950);
 }
-.jx-home__title em { font-style: normal; color: #ff8d96; }
-.jx-home__lead { margin: 0 0 28px; max-width: 68ch; font-size: 1.12rem; line-height: 1.75; color: rgba(255, 255, 255, 0.82); }
-.jx-home__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 22px; }
-.jx-home__more {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-weight: 600; color: var(--white); text-decoration: none;
+.jx-home__title em { font-style: normal; color: var(--red); }
+.jx-home__sub {
+  margin: 0 0 14px; font-family: "Plus Jakarta Sans", var(--font-head);
+  font-size: clamp(1.15rem, 1.8vw, 1.45rem); font-weight: 700; letter-spacing: -0.02em; color: var(--grey-900);
 }
-.jx-home__more:hover { color: #ffb3b9; }
-.jx-home__more .bi { transition: transform 0.2s ease; }
-.jx-home__more:hover .bi { transform: translateX(3px); }
-.jx-home__points {
-  list-style: none; margin: 0; padding: 0;
-  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px;
+.jx-home__lead { margin: 0 0 22px; font-size: 1.05rem; line-height: 1.75; color: var(--grey-700); }
+
+.jx-home__chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 30px; padding: 0; list-style: none; }
+.jx-home__chips li {
+  padding: 6px 14px; border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+  color: var(--grey-800); background: var(--white); border: 1px solid var(--grey-300);
 }
-.jx-home__points li {
-  padding: 26px 24px 28px; border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
-  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
-}
-.jx-home__points li:hover {
-  transform: translateY(-4px);
-  background: rgba(255, 255, 255, 0.09);
-  border-color: rgba(255, 141, 150, 0.45);
-}
+
+.jx-home__features { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 26px; margin: 0 0 34px; padding: 0; list-style: none; }
+.jx-home__features li { display: grid; grid-template-columns: 40px 1fr; gap: 14px; align-items: start; }
 .jx-home__icon {
   display: inline-flex; align-items: center; justify-content: center;
-  width: 46px; height: 46px; margin-bottom: 18px; border-radius: 14px;
-  background: var(--red); color: var(--white); font-size: 1.2rem;
-  box-shadow: 0 8px 20px var(--red-glow);
+  width: 40px; height: 40px; border-radius: 11px;
+  background: var(--red-soft); color: var(--red); font-size: 1.05rem;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
-.jx-home__points h3 {
-  margin: 0 0 8px; font-family: "Plus Jakarta Sans", var(--font-head);
-  font-size: 1.12rem; font-weight: 700; line-height: 1.3; color: var(--white);
+.jx-home__features li:hover .jx-home__icon { background: var(--red); color: var(--white); transform: scale(1.05); }
+.jx-home__features h3 {
+  margin: 4px 0 6px; font-family: "Plus Jakarta Sans", var(--font-head);
+  font-size: 1.02rem; font-weight: 700; line-height: 1.3; letter-spacing: -0.01em; color: var(--grey-950);
 }
-.jx-home__points p { margin: 0; font-size: 0.95rem; line-height: 1.6; color: rgba(255, 255, 255, 0.74); }
-.jx-home + .gtouch { margin-top: 0; }
+.jx-home__features p { margin: 0; font-size: 0.92rem; line-height: 1.6; color: var(--text-muted); }
+
+.jx-home__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; }
+.jx-home__more {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-weight: 600; color: var(--grey-950); text-decoration: none;
+}
+.jx-home__more:hover { color: var(--red); }
+.jx-home__more .bi { transition: transform 0.2s ease; }
+.jx-home__more:hover .bi { transform: translateX(3px); }
+
+/* Workspace mock: reuses the .jxm window from the JuriNex page, no floating cards, filling the column */
+.jx-home__visual { min-width: 0; }
+.jx-home__mock { padding: 0; width: calc(100% + 72px); max-width: none; }
+.jx-home__mock .jxm__glow { inset: 6% -6% 0 -6%; }
+.jx-home__mock .jxm__window { border-radius: 22px; box-shadow: 0 36px 80px rgba(31, 35, 38, 0.16), 0 2px 6px rgba(31, 35, 38, 0.05); }
+.jx-home__mock .jxm__bar { padding: 14px 18px; }
+.jx-home__mock .jxm__body { grid-template-columns: 64px minmax(0, 1fr); min-height: 520px; }
+.jx-home__mock .jxm__nav { gap: 20px; padding: 20px 0; }
+.jx-home__mock .jxm__logo { width: 36px; height: 36px; padding: 0; background: none; overflow: hidden; border-radius: 9px; }
+.jx-home__logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.jx-home__mock .jxm__nav i { font-size: 1.1rem; }
+.jx-home__mock .jxm__main { padding: 24px 26px 26px; }
+.jx-home__mock .jxm__head { margin-bottom: 20px; }
+.jx-home__mock .jxm__head strong { font-size: 1.15rem; }
+.jx-home__mock .jxm__head span { font-size: 0.8rem; }
+.jx-home__mock .jxm__head b { font-size: 0.78rem; padding: 9px 14px; }
+.jx-home__mock .jxm__stats { gap: 12px; margin-bottom: 20px; }
+.jx-home__mock .jxm__stats div { padding: 16px 16px; }
+.jx-home__mock .jxm__stats strong { font-size: 1.6rem; margin-bottom: 6px; }
+.jx-home__mock .jxm__stats span { font-size: 0.74rem; white-space: nowrap; }
+.jx-home__mock .jxm__tr { padding: 15px 16px; font-size: 0.8rem; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) 68px; }
+.jx-home__mock .jxm__tr > span:nth-child(2) { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.jx-home__mock .jxm__tr--head { font-size: 0.66rem; }
+.jx-home__mock .jxm__pill { font-size: 0.68rem; padding: 4px 10px; }
+
+/* Stats strip under the split, divided by hairlines */
+.jx-home__stats {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 64px; border-top: 1px solid var(--grey-300);
+}
+.jx-home__stat { padding: 30px 28px 0 0; }
+.jx-home__stat + .jx-home__stat { padding-left: 28px; border-left: 1px solid var(--grey-300); }
+.jx-home__stat strong {
+  display: block; font-family: "Plus Jakarta Sans", var(--font-head);
+  font-size: clamp(1.9rem, 3vw, 2.6rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1; color: var(--grey-950); margin-bottom: 8px;
+}
+.jx-home__stat span { font-size: 0.92rem; color: var(--grey-600); }
+
+.jx-home + .intro { padding-top: 96px; }
 @media (max-width: 991.98px) {
   .jx-home { padding: 80px 0 72px; }
-  .jx-home__points { grid-template-columns: 1fr; }
+  .jx-home__tint { top: -80px; right: -300px; } /* glow fades in below the seam instead of cutting across it */
+  .jx-home__layout { grid-template-columns: 1fr; gap: 44px; }
+  .jx-home__intro { max-width: 640px; }
+  .jx-home__mock { width: 100%; }
+  .jx-home__mock .jxm__body { min-height: 0; }
+  .jx-home__stats { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 52px; row-gap: 8px; }
+  .jx-home__stat { padding: 24px 20px 12px 0; }
+  .jx-home__stat:nth-child(odd) { padding-left: 0; border-left: 0; }
+  .jx-home__stat:nth-child(even) { padding-left: 20px; border-left: 1px solid var(--grey-300); }
+  .jx-home + .intro { padding-top: 72px; }
+}
+@media (max-width: 575.98px) {
+  .jx-home__features { grid-template-columns: 1fr; gap: 18px; }
+  .jx-home__stat strong { font-size: 1.7rem; }
+  .jx-home__mock .jxm__main { padding: 16px; }
+  .jx-home__mock .jxm__tr { padding: 12px; }
 }
 
 /* ==========================================================================
