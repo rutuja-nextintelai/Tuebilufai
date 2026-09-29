@@ -2,7 +2,7 @@ import ContactForm from './ContactForm.jsx'
 
 const FIELDS = [
   { name: 'name', label: 'Name', placeholder: 'Your full name', col: 'col-md-6' },
-  { name: 'phone', label: 'Phone', placeholder: 'Your phone number', type: 'tel', col: 'col-md-6' },
+  { name: 'phone', label: 'Mobile number', placeholder: '9876543210', type: 'tel', col: 'col-md-6' },
   { name: 'email', label: 'Email', placeholder: 'you@company.com', type: 'email', col: 'col-md-6' },
   { name: 'subject', label: 'Subject', placeholder: 'What is this about?', optional: true, col: 'col-md-6' },
   {

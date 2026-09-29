@@ -13,6 +13,7 @@ import JuriNex from './pages/JuriNex.jsx'
 import Contact from './pages/Contact.jsx'
 import Careers from './pages/Careers.jsx'
 import Openings from './pages/Openings.jsx'
+import Apply from './pages/Apply.jsx'
 
 export default function App() {
   const { pathname, hash } = useLocation()
@@ -46,6 +47,7 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/careers/openings" element={<Openings />} />
+          <Route path="/careers/apply/:slug?" element={<Apply />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </main>

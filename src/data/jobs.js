@@ -1,6 +1,5 @@
 // Openings shown on the Careers page (first two, flagged `featured`) and in
-// full on /careers/openings. Applications go to the Google Form below.
-export const APPLY_URL = 'https://docs.google.com/forms/d/e/1FAIpQLScAXiGz12nRN-BXVR6Q0EpJUB3JFqIggbTdKi5DG2wA936JyA/viewform?usp=publish-editor'
+// full on /careers/openings. Apply now opens the form at /careers/apply/<slug>.
 
 export const AREAS = ['Sales', 'AI & Data']
 export const TYPES = ['Full-time', 'Internship']

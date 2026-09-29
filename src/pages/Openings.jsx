@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import PageHero from '../components/PageHero.jsx'
 import GetInTouch from '../components/GetInTouch.jsx'
-import { JOBS, APPLY_URL, AREAS, TYPES, EXPERIENCE } from '../data/jobs.js'
+import { JOBS, AREAS, TYPES, EXPERIENCE } from '../data/jobs.js'
 
 const GROUPS = [
   { key: 'area', label: 'Area of interest', options: AREAS },
@@ -43,9 +43,9 @@ function JobCard({ job, expanded, onToggle }) {
           <span className="op-job__area">{job.area}</span>
           <h2>{job.title}</h2>
         </div>
-        <a className="btn btn-red btn-sm op-job__apply" href={APPLY_URL} target="_blank" rel="noopener noreferrer">
-          Apply now <i className="bi bi-arrow-up-right" />
-        </a>
+        <Link className="btn btn-red btn-sm op-job__apply" to={`/careers/apply/${job.slug}`}>
+          Apply now <i className="bi bi-arrow-right" />
+        </Link>
       </div>
       <ul className="op-job__tags">
         <li><i className="bi bi-briefcase" /> {job.type}</li>

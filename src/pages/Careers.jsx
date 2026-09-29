@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import PageHero from '../components/PageHero.jsx'
 import GetInTouch from '../components/GetInTouch.jsx'
 import LottieArt from '../components/LottieArt.jsx'
-import { JOBS, APPLY_URL } from '../data/jobs.js'
+import { JOBS } from '../data/jobs.js'
 
 const FEATURED = JOBS.filter((j) => j.featured).slice(0, 2)
 
@@ -25,11 +25,8 @@ const WHY = [
   { num: '04', text: 'An AI culture you don’t just experience, you help build', image: '/assets/img/careers/why-4.jpg', hint: 'Colleagues laughing together' },
 ]
 
-// Apply now opens this Google Form in a new tab.
-
-
 const FAQS = [
-  { q: `How do I apply for a role at ${BRAND}?`, a: 'Browse the open roles above and click Apply now on the one that fits. The application form opens in a new tab. Every application is read by a person, not just a filter.' },
+  { q: `How do I apply for a role at ${BRAND}?`, a: 'Browse the open roles above and click Apply now on the one that fits. The application form takes you through five short steps, so keep your resume ready. Every application is read by a person, not just a filter.' },
   { q: 'Can I apply for more than one role at a time?', a: 'Yes. If multiple roles match your skills and interests, apply to each one. Tailor each application to explain why you are a strong fit for that team.' },
   { q: 'What does the interview process look like?', a: 'Typically an initial conversation with the team, one or two technical or role-specific rounds, and a final discussion with a founder. We keep you informed at every stage.' },
   { q: 'Do you offer remote or hybrid work options?', a: 'We believe in flexibility. Depending on the role, we offer hybrid and remote-friendly arrangements around our Chhatrapati Sambhajinagar offices.' },
@@ -242,9 +239,9 @@ export default function Careers() {
                 <p>{j.summary}</p>
                 <div className="cr-job__actions">
                   <Link to={`/careers/openings#${j.slug}`} className="cr-job__link">View details <i className="bi bi-arrow-right" /></Link>
-                  <a className="btn btn-dark btn-sm" href={APPLY_URL} target="_blank" rel="noopener noreferrer">
-                    Apply now <i className="bi bi-arrow-up-right" />
-                  </a>
+                  <Link className="btn btn-dark btn-sm" to={`/careers/apply/${j.slug}`}>
+                    Apply now <i className="bi bi-arrow-right" />
+                  </Link>
                 </div>
               </article>
             ))}

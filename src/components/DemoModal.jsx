@@ -4,7 +4,7 @@ import ContactForm from './ContactForm.jsx'
 const FIELDS = [
   { name: 'name', placeholder: 'Full Name', icon: 'bi-person', col: 'col-md-6' },
   { name: 'email', placeholder: 'Email Address', icon: 'bi-envelope', type: 'email', col: 'col-md-6' },
-  { name: 'phone', placeholder: 'Phone Number', icon: 'bi-telephone', type: 'tel', col: 'col-md-6' },
+  { name: 'phone', placeholder: '9876543210', icon: 'bi-telephone', type: 'tel', col: 'col-md-6' },
   { name: 'organization', placeholder: 'Organization', icon: 'bi-building', col: 'col-md-6' },
   { name: 'practice_area', placeholder: 'Select Practice Area', icon: 'bi-briefcase', type: 'select', col: 'col-12', options: ['Litigation', 'Corporate Law', 'Compliance', 'Contracts', 'Other'] },
   { name: 'message', placeholder: 'Tell us more about your needs...', icon: 'bi-chat-dots', type: 'textarea', col: 'col-12', height: 150 },
