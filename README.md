@@ -46,12 +46,12 @@ gcloud services enable run.googleapis.com cloudbuild.googleapis.com artifactregi
 Create `.env.production` with the three form endpoints, then run from the repo root:
 
 ```bash
-gcloud run deploy tuebiluf-ai --source . --region asia-south1 --allow-unauthenticated
+gcloud run deploy tuebiluf-ai --source . --region asia-southeast1 --allow-unauthenticated
 ```
 
 Cloud Build builds the image from the `Dockerfile`, stores it in Artifact Registry and deploys
 it. The command prints the service URL when it finishes. Run it again to ship a new version.
-Pick any region; `asia-south1` is Mumbai.
+The service currently lives in `asia-southeast1` (Singapore); keep that region so you update it instead of creating a second one.
 
 ### Deploy automatically from GitHub
 
@@ -60,7 +60,7 @@ Pick any region; `asia-south1` is Mumbai.
 1. Create the image repository once (same region as in `cloudbuild.yaml`):
 
    ```bash
-   gcloud artifacts repositories create web --repository-format=docker --location=asia-south1
+   gcloud artifacts repositories create web --repository-format=docker --location=asia-southeast1
    ```
 
 2. Let the service account Cloud Build runs as (shown under Cloud Build > Settings; on newer

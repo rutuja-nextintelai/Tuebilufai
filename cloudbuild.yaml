@@ -7,7 +7,7 @@
 # every push to main deploys automatically. One-time setup is described in README.md.
 
 substitutions:
-  _REGION: asia-south1        # Mumbai. Change to the region closest to your users.
+  _REGION: asia-southeast1    # Singapore, where the service already lives. Change if you move it.
   _REPOSITORY: web            # Artifact Registry repository (must exist, see README)
   _SERVICE: tuebiluf-ai       # Cloud Run service name
   # Form endpoints baked into the bundle. Leave empty to use the values from .env.production,
