@@ -1,0 +1,58 @@
+# Cloud Build pipeline: build the image, push it to Artifact Registry, deploy it to Cloud Run.
+#
+# Run it by hand from the repo root:
+#   gcloud builds submit --config cloudbuild.yaml
+#
+# Or connect the GitHub repo under Cloud Build > Triggers, point the trigger at this file, and
+# every push to main deploys automatically. One-time setup is described in README.md.
+
+substitutions:
+  _REGION: asia-south1        # Mumbai. Change to the region closest to your users.
+  _REPOSITORY: web            # Artifact Registry repository (must exist, see README)
+  _SERVICE: tuebiluf-ai       # Cloud Run service name
+  # Form endpoints baked into the bundle. Leave empty to use the values from .env.production,
+  # or set them here / in the trigger / with --substitutions=_VITE_GOOGLE_SCRIPT_URL=...
+  _VITE_GOOGLE_SCRIPT_URL: ''
+  _VITE_CAREERS_SCRIPT_URL: ''
+  _VITE_NEWSLETTER_SCRIPT_URL: ''
+
+steps:
+  - id: build
+    name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - --tag=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_SERVICE}:$BUILD_ID
+      - --tag=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_SERVICE}:latest
+      - --build-arg=VITE_GOOGLE_SCRIPT_URL=${_VITE_GOOGLE_SCRIPT_URL}
+      - --build-arg=VITE_CAREERS_SCRIPT_URL=${_VITE_CAREERS_SCRIPT_URL}
+      - --build-arg=VITE_NEWSLETTER_SCRIPT_URL=${_VITE_NEWSLETTER_SCRIPT_URL}
+      - .
+
+  - id: push
+    name: gcr.io/cloud-builders/docker
+    args:
+      - push
+      - --all-tags
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_SERVICE}
+
+  - id: deploy
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - ${_SERVICE}
+      - --image=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_SERVICE}:$BUILD_ID
+      - --region=${_REGION}
+      - --platform=managed
+      - --allow-unauthenticated
+      - --memory=256Mi
+      - --quiet
+
+images:
+  - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_SERVICE}:$BUILD_ID
+  - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_SERVICE}:latest
+
+timeout: 1200s
+options:
+  logging: CLOUD_LOGGING_ONLY

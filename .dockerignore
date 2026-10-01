@@ -1,0 +1,33 @@
+# Dependencies and build output (rebuilt inside the image)
+node_modules
+dist
+build
+
+# Version control and editor files
+.git
+.gitignore
+.gitattributes
+.vscode
+.idea
+
+# Local-only env files. .env.production is allowed through so Vite can read it during the build.
+.env
+.env.local
+.env.*.local
+
+# Deployment and tooling the image does not need
+Dockerfile
+.dockerignore
+cloudbuild.yaml
+netlify.toml
+.netlify
+apps-script
+*.md
+
+# Logs, caches, OS files
+npm-debug.log*
+.cache
+.vite
+coverage
+.DS_Store
+Thumbs.db
