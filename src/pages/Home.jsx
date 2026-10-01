@@ -28,9 +28,9 @@ export default function Home() {
         </div>
       </section>
 
-      <JurinexHome />
       <IntroSection showLink />
       <ApproachSection />
+      <JurinexHome />
       <GetInTouch />
     </>
   )

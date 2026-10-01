@@ -1892,7 +1892,7 @@ button { font-family: inherit; }
 @media (max-width: 575.98px) { .pcards, .frost-grid { grid-template-columns: 1fr; } .pcard { aspect-ratio: 4 / 3.6; } .notch-sec__header { margin-bottom: 36px; } }
 
 /* ==========================================================================
-   Home: Meet JuriNex, the flagship platform section right after the hero (light)
+   Home: Meet JuriNex, the flagship platform section above the closing contact band (light)
    ========================================================================== */
 .jx-home {
   position: relative; overflow: hidden; padding: 104px 0 88px;
@@ -2002,7 +2002,6 @@ button { font-family: inherit; }
 }
 .jx-home__stat span { font-size: 0.92rem; color: var(--grey-600); }
 
-.jx-home + .intro { padding-top: 96px; }
 @media (max-width: 991.98px) {
   .jx-home { padding: 80px 0 72px; }
   .jx-home__tint { top: -80px; right: -300px; } /* glow fades in below the seam instead of cutting across it */
@@ -2014,7 +2013,6 @@ button { font-family: inherit; }
   .jx-home__stat { padding: 24px 20px 12px 0; }
   .jx-home__stat:nth-child(odd) { padding-left: 0; border-left: 0; }
   .jx-home__stat:nth-child(even) { padding-left: 20px; border-left: 1px solid var(--grey-300); }
-  .jx-home + .intro { padding-top: 72px; }
 }
 @media (max-width: 575.98px) {
   .jx-home__features { grid-template-columns: 1fr; gap: 18px; }
