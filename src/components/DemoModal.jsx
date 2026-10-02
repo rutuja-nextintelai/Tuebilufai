@@ -29,7 +29,7 @@ export default function DemoModal({ open, onClose }) {
       <div className="dialog__panel" onClick={(e) => e.stopPropagation()}>
         <div className="dialog__head">
           <div>
-            <span className="eyebrow">JuriNex</span>
+            <span className="eyebrow">Jurinex</span>
             <h3 id="demo-title">Request a Demo</h3>
           </div>
           <button type="button" className="dialog__close" aria-label="Close" onClick={onClose}>

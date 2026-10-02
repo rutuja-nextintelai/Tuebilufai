@@ -1110,7 +1110,7 @@ button { font-family: inherit; }
 .form-alert--ok { background: #e7f6ec; color: #1e6b3a; }
 .form-alert--error { background: var(--red-soft); color: var(--red-dark); }
 
-/* Gallery (JuriNex) ------------------------------------------------------ */
+/* Gallery (Jurinex) ------------------------------------------------------ */
 .gallery__main { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
 .gallery__main img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 .gallery__main { --swiper-navigation-color: var(--grey-900); --swiper-navigation-size: 14px; --swiper-pagination-color: var(--red); --swiper-pagination-bullet-inactive-color: #fff; --swiper-pagination-bullet-inactive-opacity: 0.7; }
@@ -1123,7 +1123,7 @@ button { font-family: inherit; }
 .gallery__thumbs button:hover { border-color: var(--red); transform: translateY(-2px); }
 .gallery__thumbs img { width: 100%; height: 72px; object-fit: cover; }
 
-/* Demo (JuriNex) --------------------------------------------------------- */
+/* Demo (Jurinex) --------------------------------------------------------- */
 .demo {
   max-width: 900px; margin: 0 auto;
   background: rgba(255, 255, 255, 0.06);
@@ -1359,7 +1359,7 @@ button { font-family: inherit; }
 .pilot__list i { color: var(--red); font-size: 1.1rem; }
 @media (max-width: 991.98px) { .pilot { grid-template-columns: 1fr; padding: 32px 24px; } }
 
-/* Alternating capability rows (JuriNex) */
+/* Alternating capability rows (Jurinex) */
 .cap-row { padding: 40px 0; }
 .cap-row + .cap-row { border-top: 1px solid var(--grey-200); }
 .cap-row--flip { flex-direction: row-reverse; }
@@ -1892,7 +1892,7 @@ button { font-family: inherit; }
 @media (max-width: 575.98px) { .pcards, .frost-grid { grid-template-columns: 1fr; } .pcard { aspect-ratio: 4 / 3.6; } .notch-sec__header { margin-bottom: 36px; } }
 
 /* ==========================================================================
-   Home: Meet JuriNex, the flagship platform section above the closing contact band (light)
+   Home: Meet Jurinex, the flagship platform section above the closing contact band (light)
    ========================================================================== */
 .jx-home {
   position: relative; overflow: hidden; padding: 104px 0 88px;
@@ -1956,15 +1956,8 @@ button { font-family: inherit; }
 .jx-home__features p { margin: 0; font-size: 0.92rem; line-height: 1.6; color: var(--text-muted); }
 
 .jx-home__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; }
-.jx-home__more {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-weight: 600; color: var(--grey-950); text-decoration: none;
-}
-.jx-home__more:hover { color: var(--red); }
-.jx-home__more .bi { transition: transform 0.2s ease; }
-.jx-home__more:hover .bi { transform: translateX(3px); }
 
-/* Workspace mock: reuses the .jxm window from the JuriNex page, no floating cards, filling the column */
+/* Workspace mock: reuses the .jxm window from the Jurinex page, no floating cards, filling the column */
 .jx-home__visual { min-width: 0; }
 .jx-home__mock { padding: 0; width: calc(100% + 72px); max-width: none; }
 .jx-home__mock .jxm__glow { inset: 6% -6% 0 -6%; }
@@ -2436,7 +2429,7 @@ button { font-family: inherit; }
   .tl::after { transform: translateX(-50%) scaleY(1); }
 }
 
-/* JuriNex overview + light heading variants for dark bands */
+/* Jurinex overview + light heading variants for dark bands */
 .jx-title { font-family: "Plus Jakarta Sans", var(--font-head); font-weight: 800; font-size: clamp(1.7rem, 3vw, 2.4rem); letter-spacing: -0.03em; margin-bottom: 18px; }
 .jx-tech { margin-top: 56px; }
 .intro__eyebrow--light { color: rgba(255, 255, 255, 0.65); }
@@ -3126,7 +3119,7 @@ button { font-family: inherit; }
   .apr__detail { animation: none; }
 }
 
-/* JuriNex page additions ------------------------------------------------- */
+/* Jurinex page additions ------------------------------------------------- */
 /* Overview mock: a CSS-built workspace screen with floating answer and citation cards */
 .jxm { position: relative; padding: 24px 96px 84px 0; }
 .jxm__glow { position: absolute; inset: 10% 20% 20% -10%; border-radius: 50%; background: radial-gradient(circle, rgba(190, 28, 41, 0.16), transparent 68%); filter: blur(30px); pointer-events: none; }

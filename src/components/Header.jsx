@@ -12,7 +12,7 @@ const MENU = [
   {
     label: 'Platforms',
     items: [
-      { to: '/jurinex', label: 'JuriNex', desc: 'AI-driven legal intelligence' },
+      { to: '/jurinex', label: 'Jurinex', desc: 'AI-driven legal intelligence' },
     ],
   },
 ]

@@ -42,14 +42,14 @@ const ROWS = [
     label: 'Who we are',
     image: aiBrowsingImg,
     alt: 'Person using an AI-powered browser on a laptop',
-    text: `${BRAND} Pvt. Ltd. is a cutting-edge AI technology company building scalable, cloud-native solutions for document intelligence, data processing, and language-based automation. With deep expertise in AI/ML, OCR, LLMs, and multilingual NLP, our systems are designed to process massive data volumes, enable real-time insights, and power intelligent workflows across industries. Our core platforms are built on Google Cloud Platform (GCP), optimized for security, speed, and cost-efficiency.`,
+    text: `${BRAND} Pvt. Ltd. is an AI product company based in India, bringing together expertise in artificial intelligence, software engineering, and product development. We are a team committed to understanding real business challenges and building technology with a clear purpose. Our identity is shaped by technical depth, thoughtful product design, and a focus on creating lasting value for the professionals and organisations we serve.`,
   },
   {
     icon: 'bi-stars',
     label: 'What we do',
     image: aiWebDevImg,
     alt: 'Illustration of AI-assisted web development',
-    text: `${BRAND} delivers AI solutions that transform key sectors. In legal workflows, we streamline case research, drafting, and multilingual document analysis. For business and compliance, we automate financial reporting and regulatory checks. In education, AI enhances evaluation, plagiarism detection, and content summarization. In the financial sector, our systems digitize loan files, assess credit risk, and automate reporting. Across all sectors, ${BRAND}’s AI simplifies complexity, saves time, and delivers actionable insights.`,
+    text: 'We develop AI products that help organisations process complex documents, access relevant knowledge, and streamline operational workflows. By combining Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), OCR, and multilingual language processing, we enable information extraction, document analysis, natural-language search, and AI-assisted content generation. Our flagship platform, Jurinex, applies these capabilities to legal work, bringing case document management, summaries, chronologies, citation research, and drafting into one workspace.',
   },
 ]
 

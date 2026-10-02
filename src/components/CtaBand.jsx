@@ -12,6 +12,8 @@ export default function CtaBand({ title, text, primary = { to: '/contact', label
           <div className="cta-band__actions">
             {primary.onClick ? (
               <button type="button" className="btn btn-white" onClick={primary.onClick}>{primary.label}</button>
+            ) : primary.external ? (
+              <a href={primary.to} target="_blank" rel="noopener" className="btn btn-white">{primary.label} <i className="bi bi-arrow-up-right" /></a>
             ) : (
               <Link to={primary.to} className="btn btn-white">{primary.label}</Link>
             )}

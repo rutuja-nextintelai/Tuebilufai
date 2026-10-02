@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import jurinexMark from '../assets/jurinex-mark.png'
 
 const JURINEX_URL = 'https://jurinex.ai/'
@@ -93,10 +92,10 @@ export default function JurinexHome() {
         <div className="jx-home__layout">
           <div className="jx-home__intro" data-aos="fade-up">
             <span className="jx-home__eyebrow">Our flagship platform</span>
-            <h2 className="jx-home__title">Meet <em>JuriNex</em></h2>
+            <h2 className="jx-home__title">Meet <em>Jurinex</em></h2>
             <p className="jx-home__sub">The AI legal workspace built for Indian courts.</p>
             <p className="jx-home__lead">
-              Upload a case once. JuriNex reads every page, builds the chronology, finds the
+              Upload a case once. Jurinex reads every page, builds the chronology, finds the
               authorities, and drafts court-ready documents, with every answer linked to the
               page it came from.
             </p>
@@ -119,12 +118,9 @@ export default function JurinexHome() {
 
             <div className="jx-home__actions">
               <a href={JURINEX_URL} target="_blank" rel="noopener noreferrer" className="hero-btn hero-btn--red">
-                Start 7-day free trial
+                See how Jurinex works
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 11.5 L11.5 2.5 M4.5 2.5 H11.5 V9.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </a>
-              <Link to="/jurinex" className="jx-home__more">
-                See how JuriNex works <i className="bi bi-arrow-right" aria-hidden="true" />
-              </Link>
             </div>
           </div>
 

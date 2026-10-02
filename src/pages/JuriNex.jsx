@@ -1,8 +1,7 @@
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState } from 'react'
 
 import PageHero from '../components/PageHero.jsx'
 import CtaBand from '../components/CtaBand.jsx'
-import DemoModal from '../components/DemoModal.jsx'
 import GetInTouch from '../components/GetInTouch.jsx'
 
 const JURINEX_URL = 'https://jurinex.ai/'
@@ -125,7 +124,6 @@ const PRACTICES = [
 ]
 
 export default function JuriNex() {
-  const [modalOpen, setModalOpen] = useState(false)
   const [feature, setFeature] = useState(0)
   const [featurePaused, setFeaturePaused] = useState(false)
 
@@ -135,13 +133,11 @@ export default function JuriNex() {
     const id = setInterval(() => setFeature((f) => (f + 1) % FEATURES.length), 4500)
     return () => clearInterval(id)
   }, [featurePaused])
-  const openModal = useCallback((e) => { e?.preventDefault(); setModalOpen(true) }, [])
-  const closeModal = useCallback(() => setModalOpen(false), [])
 
   return (
     <>
       <PageHero
-        crumbs={['Platforms', 'JuriNex']}
+        crumbs={['Platforms', 'Jurinex']}
         title="Enterprise-grade legal operating system for law professionals, powered by AI"
         lead="Work faster, practice smarter with the power of AI. Jurinex handles your research, drafting, citations and case files, purpose-built for Indian courts and Indian languages."
       />
@@ -230,7 +226,6 @@ export default function JuriNex() {
                 <a href={JURINEX_URL} target="_blank" rel="noopener" className="btn btn-red">
                   Start free trial <i className="bi bi-arrow-up-right" />
                 </a>
-                <button type="button" className="btn btn-outline-dark" onClick={openModal}>Request a demo</button>
               </div>
             </div>
           </div>
@@ -520,14 +515,11 @@ export default function JuriNex() {
         <CtaBand
           title="Ready to transform your legal workflow?"
           text="Bring document intelligence, AI research, evidence analysis, and drafting into one secure workspace built for legal professionals. Start your 7-day free trial today."
-          primary={{ label: 'Schedule a demo', onClick: openModal }}
-          secondary={{ to: JURINEX_URL, label: 'Visit jurinex.ai', external: true }}
+          primary={{ to: JURINEX_URL, label: 'Visit jurinex.ai', external: true }}
         />
       </section>
 
       <GetInTouch />
-
-      <DemoModal open={modalOpen} onClose={closeModal} />
     </>
   )
 }

@@ -19,7 +19,7 @@ export default function Home() {
             <p className="hero--video__lead">We design scalable AI solutions for document intelligence, compliance, and automation</p>
             <div className="hero--video__actions">
               <Link to="/jurinex" className="hero-btn hero-btn--red">
-                Explore JuriNex
+                Explore Jurinex
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 11.5 L11.5 2.5 M4.5 2.5 H11.5 V9.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </Link>
               <Link to="/contact" className="hero-btn hero-btn--grey">Contact us</Link>
